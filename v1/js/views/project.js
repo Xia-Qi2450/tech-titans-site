@@ -5,7 +5,7 @@ import { group } from '../components/episode.js';
 export function vProject(slug){
   var p = proj(slug);
   var ok = p.status === 'active';
-  var h = '<a class="back" href="/production/">&larr; Production Team</a><div class="eyebrow">Project</div><h1>' + esc(p.title) + '</h1>' +
+  var h = '<a class="back" href="production/">&larr; Production Team</a><div class="eyebrow">Project</div><h1>' + esc(p.title) + '</h1>' +
     '<span class="tag ' + (ok ? 't-ok' : 't-warn') + '">' + (ok ? 'Active' : 'Planned') + '</span><p class="lead">' + esc(p.about) + '</p>';
   var g = { airing: [], aired: [], production: [] };
   (p.episodes || []).forEach(function(e, i){ (g[e.state] || g.production).push([e, i]); });
