@@ -13,6 +13,6 @@ if(!slug){
   hideLoader();
 } else {
   $('#app').innerHTML = vPerson(slug);
-  document.title = $('#app h1').textContent + ' - Tech Titans';
+  document.title = $('#app h1').textContent + ' — Tech Titans';
   hideLoader();
 }

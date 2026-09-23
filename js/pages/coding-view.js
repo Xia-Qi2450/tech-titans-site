@@ -10,10 +10,10 @@ if(!slug){
   location.replace('/coding/');
 } else if(!codingProj(slug)){
   $('#app').innerHTML = vCodingProjectNotFound(slug);
-  document.title = 'Project not found - Tech Titans';
+  document.title = 'Project not found — Tech Titans';
   hideLoader();
 } else {
   $('#app').innerHTML = vCodingProject(slug);
-  document.title = $('#app h1').textContent + ' - Tech Titans';
+  document.title = $('#app h1').textContent + ' — Tech Titans';
   hideLoader();
 }

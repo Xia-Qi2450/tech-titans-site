@@ -8,19 +8,19 @@ import { hideLoader } from '../loader.js';
 var slug = new URLSearchParams(location.search).get('production');
 
 if(!slug){
-  // No project specified - send them to the department page instead of showing an empty template.
+  // No project specified — send them to the department page instead of showing an empty template.
   location.replace('/production/');
 } else if(!proj(slug)){
   $('#app').innerHTML = vProjectNotFound(slug);
-  document.title = 'Project not found - Tech Titans';
+  document.title = 'Project not found — Tech Titans';
   hideLoader();
 } else {
   $('#app').innerHTML = vProject(slug);
-  document.title = $('#app h1').textContent + ' - Tech Titans';
+  document.title = $('#app h1').textContent + ' — Tech Titans';
   hideLoader();
 }
 
-// Episode cards on this page open the synopsis/video modal - same behavior as before.
+// Episode cards on this page open the synopsis/video modal — same behavior as before.
 document.addEventListener('click', function(e){
   var ep = e.target.closest('[data-ep]');
   if(ep) openEp(ep.getAttribute('data-ep'));

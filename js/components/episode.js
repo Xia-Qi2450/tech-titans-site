@@ -13,7 +13,7 @@ export function steps(st){
 }
 
 export function embed(id){
-  if(!id || /REPLACE/.test(id)) return '<div class="embed"><div class="ph">Google Drive embed - set this episode&rsquo;s <code>drive</code> file ID in the data block.</div></div>';
+  if(!id || /REPLACE/.test(id)) return '<div class="embed"><div class="ph">Google Drive embed — set this episode&rsquo;s <code>drive</code> file ID in the data block.</div></div>';
   return '<div class="embed"><iframe src="https://drive.google.com/file/d/' + esc(id) + '/preview" allow="autoplay" allowfullscreen title="Episode video"></iframe></div>';
 }
 
@@ -48,7 +48,7 @@ export function group(label, list, slug){
   return h + '</div>';
 }
 
-// The dialog element is static and reused for every episode - openEp() only
+// The dialog element is static and reused for every episode — openEp() only
 // ever rewrites #dlgBody. That means the fix belongs here, once, rather than
 // in openEp(): whenever the dialog closes, by ANY method (X button, Escape,
 // or a backdrop click), wipe #dlgBody so any embedded iframe is actually
@@ -59,7 +59,7 @@ if(dlg){
   dlg.addEventListener('close', function(){
     $('#dlgBody').innerHTML = '';
   });
-  // Native <dialog> only closes on Escape or an explicit .close() call -
+  // Native <dialog> only closes on Escape or an explicit .close() call —
   // clicking the backdrop does nothing by default. A backdrop click always
   // targets the <dialog> element itself (never a child), so this is the
   // standard way to add click-outside-to-close.
@@ -95,7 +95,7 @@ export function openEp(key){
       copyText(driveViewUrl(e.drive)).then(function(){
         cb.textContent = 'Copied!';
       }).catch(function(){
-        cb.textContent = "Couldn't copy - copy manually";
+        cb.textContent = "Couldn't copy — copy manually";
       }).then(function(){
         setTimeout(function(){ cb.textContent = 'Copy Drive link'; }, 1600);
       });
